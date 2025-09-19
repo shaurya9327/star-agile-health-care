@@ -30,6 +30,7 @@ spec:
     app: medicure
   ports:
     - protocol: TCP
-      port: 8080        # Service port
-      targetPort: 8080  # Container port
-      nodePort: 32669   # Port accessible externally on worker node
+      port: 8080        # service port
+      targetPort: 8080  # container port
+      nodePort: 30080   # external port to access via worker public IP
+
