@@ -15,10 +15,10 @@ spec:
         app: medicure
     spec:
       containers:
-      - name: medicure-container
-        image: shaurya93/medicure:v1
-        ports:
-        - containerPort: 8082   # updated from 8080
+        - name: medicure-container
+          image: shaurya93/medicure:v1
+          ports:
+            - containerPort: 8082
 ---
 apiVersion: v1
 kind: Service
@@ -31,4 +31,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8082       # updated from 8080
+      targetPort: 8082
