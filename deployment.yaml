@@ -25,11 +25,11 @@ kind: Service
 metadata:
   name: medicure-service
 spec:
+  type: NodePort
   selector:
     app: medicure
   ports:
     - protocol: TCP
-      port: 8080          # Service port matches containerPort
-      targetPort: 8080    # Target container port
-      nodePort: 32669     # NodePort you want to expose externally
-  type: NodePort
+      port: 8080        # Service port
+      targetPort: 8080  # Container port
+      nodePort: 32669   # Port accessible externally on worker node
