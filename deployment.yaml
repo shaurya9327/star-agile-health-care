@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: medicure-container
-        image: shaurya93/medicure:v1   # matches your Docker image
+        image: shaurya93/medicure:v1
         ports:
         - containerPort: 8080
 ---
@@ -29,6 +29,7 @@ spec:
     app: medicure
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: LoadBalancer
+      port: 8080          # Service port matches containerPort
+      targetPort: 8080    # Target container port
+      nodePort: 32669     # NodePort you want to expose externally
+  type: NodePort
