@@ -18,7 +18,7 @@ spec:
       - name: medicure-container
         image: shaurya93/medicure:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 8082   # updated from 8080
 ---
 apiVersion: v1
 kind: Service
@@ -30,7 +30,5 @@ spec:
     app: medicure
   ports:
     - protocol: TCP
-      port: 8080        # service port
-      targetPort: 8080  # container port
-      nodePort: 30080   # external port to access via worker public IP
-
+      port: 80
+      targetPort: 8082       # updated from 8080
